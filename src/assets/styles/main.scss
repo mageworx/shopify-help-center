@@ -1,4 +1,5 @@
 @import './vendor/normalize';
+@import './vendor/highlightjs';
 
 @import './variables';
 @import './common';
@@ -9,4 +10,5 @@
 @import './partials/typography';
 
 @import './components/header';
+@import './components/content';
 @import './components/button';

@@ -7,11 +7,11 @@
   margin: 0;
   min-width: rem(40px);
   font-size: rem(15px);
-  font-weight: var(--font-weight-bold, $font-weight-500);
+  font-weight: var(--font-weight-bold);
   border: 1px solid transparent;
   border-radius: 5px;
   padding: rem(8px) rem(14px);
-  background: var(--action-color, $color-action);
+  background: var(--action-color);
   color: #fff;
   line-height: rem(24px);
   text-align: center;

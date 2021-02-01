@@ -1,6 +1,10 @@
-$color-accent: #000000;
+$color-accent: #74de20;
+$color-secondary: #000000;
 $color-background: #ffffff;
 $color-action: #282828;
+$color-interactive: #fe460c;
+$color-interactive-hovered: #dc3905;
+$table-head-background: #f5f5f5;
 
 $font-weight-400: 400;
 $font-weight-500: 500;
@@ -11,11 +15,20 @@ $screen-md-min: 992px;
 $screen-lg-min: 1200px;
 $screen-xxl-min: 1600px;
 
+$heading-font: 'Agrandir', Helvetica, Arial, Lucida Grande, sans-serif;
+$text-font: 'Inter', Helvetica, Arial, Lucida Grande, sans-serif;
+
 :root {
   --accent-color: #{$color-accent};
+  --secondary-color: #{$color-secondary};
   --action-color: #{$color-action};
+  --interactive-color: #{$color-interactive};
+  --interactive-hovered: #{$color-interactive-hovered};
   --background-color: #{$color-background};
-  --text-color: #{$color-accent};
+  --text-color: #{$color-secondary};
+  --table-head-background: #{$table-head-background};
   --font-weight-normal: #{$font-weight-400};
   --font-weight-bold: #{$font-weight-500};
+  --body-font-family: #{$text-font};
+  --heading-font-family: #{$heading-font};
 }

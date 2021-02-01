@@ -9,3 +9,35 @@ p {
   font-size: 1em;
   font-weight: 400;
 }
+
+h1 {
+  font-family: var(--heading-font-family);
+  font-size: rem(48px);
+  line-height: rem(58px);
+}
+
+h2 {
+  font-size: rem(20px);
+  line-height: rem(30px);
+  font-weight: var(--font-weight-bold);
+}
+
+p {
+  font-size: rem(16px);
+  line-height: rem(24px);
+}
+
+ul, ol {
+  font-size: rem(16px);
+  line-height: rem(24px);
+}
+
+a, a:link {
+  color: var(--interactive-color);
+  text-decoration: underline;
+
+  &:hover {
+    color: var(--interactive-hovered);
+    text-decoration: none;
+  }
+}

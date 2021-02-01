@@ -54,7 +54,6 @@ module.exports = (config) => {
 
   return {
     dir: { input: 'src', output: 'build', includes: 'includes', data: 'data' },
-    // Allow nunjucks, markdown and 11ty files to be processed
     templateFormats: ['liquid', 'md', '11ty.js'],
     htmlTemplateEngine: 'liquid',
   };

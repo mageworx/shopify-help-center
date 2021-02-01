@@ -1,0 +1,17 @@
+{
+  "name": "help-center",
+  "dockerComposeFile": ["./docker-compose.yml"],
+  "initializeCommand": ["docker-compose", "stop"],
+  "shutdownAction": "none",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "sissel.shopify-liquid"
+  ]
+}

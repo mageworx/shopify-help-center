@@ -1,0 +1,30 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: rem(40px);
+  margin: 0;
+  min-width: rem(40px);
+  font-size: rem(15px);
+  font-weight: var(--font-weight-bold, $font-weight-500);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: rem(8px) rem(14px);
+  background: var(--action-color, $color-action);
+  color: #fff;
+  line-height: rem(24px);
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  user-select: none;
+
+  &--outline {
+    background: transparent;
+  }
+
+  &--inverted {
+    border-color: #fff;
+  }
+}

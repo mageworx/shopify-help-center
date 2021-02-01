@@ -1,0 +1,15 @@
+version: '2.4'
+
+services:
+  app:
+    build:
+      context: .
+    command: tail -f /dev/null
+    volumes:
+      - ./:/workspace:cached
+      - node_modules:/workspace/node_modules
+    ports:
+      - 8080:8080
+
+volumes:
+  node_modules:

@@ -16,7 +16,7 @@ module.exports = {
   performance: { hints: isDev ? false : 'warning' },
   devtool: isDev ? 'cheap-module-source-map' : 'source-map',
   entry: [
-    path.resolve(__dirname, 'src/assets/scripts/index.js'),
+    path.resolve(__dirname, 'src/assets/scripts/index.ts'),
     path.resolve(__dirname, 'src/assets/styles/main.scss'),
   ],
   output: {
@@ -37,6 +37,11 @@ module.exports = {
   }),
   module: {
     rules: [
+      {
+        test: /\.ts$/i,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         test: /\.s?css/i,
         use: [

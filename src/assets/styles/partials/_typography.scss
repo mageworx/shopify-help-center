@@ -1,3 +1,23 @@
+$scale-factor: 1.73;
+$base-font-size: 16px;
+$line-height-ratio: 1.2;
+
+@mixin typography($ratio: 1, $scale: $scale-factor, $media-scale: 1) {
+  $font-size: $base-font-size * $scale * $ratio;
+  $line-height: $font-size * $line-height-ratio;
+  $margin-bottom: $base-font-size * $line-height-ratio;
+
+  font-size: rem($font-size * $media-scale);
+  line-height: rem($line-height * $media-scale);
+  margin-bottom: rem($margin-bottom * $media-scale);
+
+  @include screen-sm {
+    font-size: rem($font-size);
+    line-height: rem($line-height);
+    margin-bottom: rem($margin-bottom);
+  }
+}
+
 h1,
 h2,
 h3,
@@ -7,32 +27,30 @@ h6,
 p {
   margin: 0;
   font-size: 1em;
-  font-weight: 400;
+  line-height: 1.2;
+  font-weight: var(--font-weight-normal);
 }
 
 h1 {
   font-family: var(--heading-font-family);
-  font-size: rem(48px);
-  line-height: rem(58px);
+  @include typography(2, $scale-factor, 0.8);
 }
 
-h2 {
-  font-size: rem(20px);
-  line-height: rem(30px);
-  font-weight: var(--font-weight-bold);
+h2,
+h3 {
+  @include typography(1, $scale-factor, 0.8);
 }
 
-p {
-  font-size: rem(16px);
-  line-height: rem(24px);
+h4,
+h5,
+p,
+ul,
+ol {
+  @include typography(1, 1, 1);
 }
 
-ul, ol {
-  font-size: rem(16px);
-  line-height: rem(24px);
-}
-
-a, a:link {
+a,
+a:link {
   color: var(--interactive-color);
   text-decoration: underline;
 

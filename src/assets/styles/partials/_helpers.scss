@@ -7,13 +7,13 @@
 }
 
 @mixin screen-lg {
-  @media (min-width: em($screen-lg-min)) {
+  @media (min-width: em($screen-lg-min, 16px)) {
     @content;
   }
 }
 
 @mixin screen-md {
-  @media (min-width: em($screen-md-min)) {
+  @media (min-width: em($screen-md-min, 16px)) {
     @content;
   }
 }
@@ -25,7 +25,7 @@
 }
 
 @mixin screen-xs {
-  @media (min-width: em($screen-xs-min)) {
+  @media (min-width: em($screen-xs-min, 16px)) {
     @content;
   }
 }

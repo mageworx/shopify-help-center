@@ -6,38 +6,53 @@
     margin: 0 auto;
     margin-top: rem(55px);
 
-    h1 {
-      margin-bottom: rem(20px);
+    h2 {
+      margin-bottom: rem(40px * 0.8);
 
-      & + h2 {
-        margin-top: 20px;
+      @include screen-sm {
+        margin-bottom: rem(40px);
       }
     }
 
-    h2,
     img {
-      margin: rem(40px) 0;
+      margin: rem(40px * 0.8) 0;
+
+      @include screen-sm {
+        margin: rem(40px) 0;
+      }
     }
 
     img {
       display: block;
       max-width: 100%;
-      box-shadow: 0 0.4rem 0.7rem rgb(0 0 0 / 20%), 0 0 0.08rem rgb(0 0 0 / 30%)
+      box-shadow: 0 0.4rem 0.7rem rgb(0 0 0 / 20%), 0 0 0.08rem rgb(0 0 0 / 30%);
     }
 
     p {
-      margin: rem(20px) 0;
+      margin: rem(20px * 0.8) 0;
+
+      @include screen-sm {
+        margin: rem(20px) 0;
+      }
     }
 
     code {
       font-size: em(10px);
-      margin: rem(20px) 0;
+      margin: rem(20px * 0.8) 0;
+
+      @include screen-sm {
+        margin: rem(20px) 0;
+      }
     }
 
     ul,
     ol {
-      margin: rem(20px) 0;
       padding-left: rem(40px);
+      margin: rem(20px * 0.8) 0;
+
+      @include screen-sm {
+        margin: rem(20px) 0;
+      }
     }
 
     .table-wrapper {

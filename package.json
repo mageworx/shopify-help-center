@@ -33,6 +33,7 @@
     "css-loader": "^5.0.1",
     "css-minimizer-webpack-plugin": "^1.1.5",
     "date-fns": "^2.16.1",
+    "dependency-graph": "^0.10.0",
     "eleventy-plugin-error-overlay": "^0.1.2",
     "html-minifier": "^4.0.0",
     "js-yaml": "^3.14.1",

@@ -2,7 +2,11 @@
 layout: default
 permalink: 'apo/index.html'
 title: Advanced Product Options
-tag: apo
+eleventyNavigation:
+  key: apo
+  title: Advanced Product Options
+  parent: help-center
+tags: apo
 ---
 
-# Hiiii
+# Hiiii APO

@@ -4,6 +4,7 @@ $color-background: #ffffff;
 $color-action: #282828;
 $color-interactive: #fe460c;
 $color-interactive-hovered: #dc3905;
+$color-subdued: #959595;
 $table-head-background: #f5f5f5;
 
 $font-weight-400: 400;
@@ -26,6 +27,7 @@ $text-font: 'Inter', Helvetica, Arial, Lucida Grande, sans-serif;
   --interactive-hovered: #{$color-interactive-hovered};
   --background-color: #{$color-background};
   --text-color: #{$color-secondary};
+  --subdued-color: #{$color-subdued};
   --table-head-background: #{$table-head-background};
   --font-weight-normal: #{$font-weight-400};
   --font-weight-bold: #{$font-weight-500};

@@ -1,0 +1,93 @@
+.article {
+  h2 {
+    margin-bottom: rem(40px * 0.8);
+
+    @include screen-sm {
+      margin-bottom: rem(40px);
+    }
+  }
+
+  img {
+    margin: rem(40px * 0.8) 0;
+
+    @include screen-sm {
+      margin: rem(40px) 0;
+    }
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.15);
+  }
+
+  p {
+    margin: rem(20px * 0.8) 0;
+
+    @include screen-sm {
+      margin: rem(20px) 0;
+    }
+  }
+
+  code {
+    font-size: em(10px);
+    margin: rem(20px * 0.8) 0;
+
+    @include screen-sm {
+      margin: rem(20px) 0;
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: rem(40px);
+    margin: rem(20px * 0.8) 0;
+
+    @include screen-sm {
+      margin: rem(20px) 0;
+    }
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    touch-action: auto;
+  }
+
+  table {
+    display: inline-block;
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    overflow: auto;
+    font-size: rem(14px);
+    margin: rem(20px) 0;
+    touch-action: auto;
+
+    th {
+      vertical-align: top;
+      padding: rem(14px) rem(18px);
+      font-weight: var(--font-weight-bold);
+      color: var(--text-color);
+      background-color: var(--table-head-background);
+      text-align: left;
+
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+
+    td {
+      vertical-align: middle;
+      padding: rem(14px) rem(18px);
+      color: var(--text-color);
+      text-align: left;
+      border-bottom: 1px solid #d1d1d1;
+    }
+  }
+}

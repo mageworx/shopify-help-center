@@ -2,7 +2,11 @@
 layout: article
 permalink: 'apo/installation.html'
 title: Advanced Product Options | Installation
-tag: apo
+eleventyNavigation:
+  key: installation
+  title: Installation
+  parent: apo
+tags: apo
 ---
 
 # Customize your app

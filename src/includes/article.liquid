@@ -1,6 +1,10 @@
 ---
 layout: default
-contentClass: article
+contentClass: page
 ---
 
-{{ content | safe }}
+{% include breadcrumbs %}
+
+<article class="article">
+  {{ content | safe }}
+</article>

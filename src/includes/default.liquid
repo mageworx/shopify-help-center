@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="{{ htmlClass }}" lang="{{ site.lang }}">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>
@@ -26,10 +26,10 @@
 
     <link rel="stylesheet" href="{% webpack 'main.css' %}" />
   </head>
-  <body class="{{ bodyClass }}">
+  <body>
     {% include header %}
 
-    <main class="content {{ contentClass }}">
+    <main class="content {{contentClass}}">
       {{ content | safe }}
     </main>
 

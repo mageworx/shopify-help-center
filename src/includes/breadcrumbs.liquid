@@ -1,0 +1,18 @@
+{% assign nav = collections.all | eleventyNavigationBreadcrumb:
+eleventyNavigation.key %} {% if nav %}
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul class="breadcrumbs__list">
+    {% for entry in nav %}
+    <li
+      class="breadcrumbs__item {% if entry.url == page.url %}breadcrumbs__item--current{% endif %}"
+    >
+      {% if entry.url == page.url %}
+      <span class="breadcrumbs__link">{{ entry.title }}</span>
+      {% else %}
+      <a href="{{ entry.url }}" class="breadcrumbs__link">{{ entry.title }}</a>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}

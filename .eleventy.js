@@ -1,13 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
-const NavigationPlugin = require('@11ty/eleventy-navigation');
 const ErrorOverlayPlugin = require('eleventy-plugin-error-overlay');
 
 const filters = require('./utils/filters');
 const markdown = require('./utils/markdown');
 const shortcodes = require('./utils/shortcodes');
 const transforms = require('./utils/transforms');
+const NavigationPlugin = require('./utils/navigation');
 
 module.exports = (config) => {
   const manifestPath = path.resolve(__dirname, 'build/assets/manifest.json');
@@ -57,4 +57,10 @@ module.exports = (config) => {
     templateFormats: ['liquid', 'md', '11ty.js'],
     htmlTemplateEngine: 'liquid',
   };
+};
+
+module.exports.navigation = {
+  find: NavigationPlugin.findNavigationEntries,
+  findBreadcrumbs: NavigationPlugin.findBreadcrumbEntries,
+  getDependencyGraph: NavigationPlugin.getDependencyGraph,
 };

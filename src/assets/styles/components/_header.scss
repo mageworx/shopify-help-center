@@ -17,7 +17,8 @@
   }
 
   &__logo {
-    &-link {
+    &-link,
+    &-link:link {
       display: block;
       padding-right: rem(22px);
       margin-right: rem(20px);

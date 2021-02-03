@@ -1,4 +1,5 @@
 $color-accent: #74de20;
+$color-accent-hovered: #67CA18;
 $color-secondary: #000000;
 $color-background: #ffffff;
 $color-action: #282828;
@@ -22,6 +23,7 @@ $text-font: 'Inter', Helvetica, Arial, Lucida Grande, sans-serif;
 
 :root {
   --accent-color: #{$color-accent};
+  --accent-hovered: #{$color-accent-hovered};
   --secondary-color: #{$color-secondary};
   --action-color: #{$color-action};
   --interactive-color: #{$color-interactive};

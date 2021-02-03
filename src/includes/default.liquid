@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>
       {% if title %}
-        {{ title }} · {{ site.title }} {% else %}{{ site.title or site.name }}
+      {{ title }} · {{ site.title }} {% else %}{{ site.title or site.name }}
       {% endif %}
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,13 +27,15 @@
     <link rel="stylesheet" href="{% webpack 'main.css' %}" />
   </head>
   <body>
-    {% include header %}
+    <div class="page-wrapper">
+      {% include header %}
 
-    <main class="content {{contentClass}}">
-      {{ content | safe }}
-    </main>
+      <main class="content {{ contentClass }}">
+        {{ content | safe }}
+      </main>
 
-    {% include footer %}
+      {% include footer %}
+    </div>
     <script async defer src="{% webpack 'main.js' %}"></script>
   </body>
 </html>

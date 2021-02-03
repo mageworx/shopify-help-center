@@ -1,8 +1,74 @@
-lang: en
 name: eleventy-webpack
 title: eleventy-webpack
-# see https://ogp.me/#types
 type: website
 url: https://github.com/clenemt/eleventy-webpack
 image: https://avatars3.githubusercontent.com/u/447956?s=400&v=4
 description: A barebone Eleventy and Webpack boilerplate 🎈.
+
+# ---------------------- #
+# --- Footer section --- #
+# ---------------------- #
+footer:
+  socials:
+    facebook: https://facebook.com/mageworx
+    twitter: https://twitter.com/mageworxteam
+    pinterest: https://pinterest.com/mageworx
+    linkedin: https://linkedin.com/company/mageworx
+    youtube: https://youtube.com/channel/UCITO0Hy4HrEd9hj78lwrhuw
+
+  apps:
+    left:
+      - title: Advanced Product Options
+        url: /
+      - title: Free Shipping & Promo Bars
+        url: /
+      - title: Advanced Bundle Products
+        url: /
+      - title: Order & Product Fees
+        url: /
+      - title: Multi Currency Auto Switcher
+        url: /
+
+    right:
+      - title: SavvyCube Analytics & Reports
+        url: /
+      - title: No-Contact Delivery
+        url: /
+      - title: Quick Holiday Effects
+        url: /
+      - title: Volume & Tiered Discounts Kit
+        url: /
+
+  company:
+    - title: About Us
+      url: /
+    - title: Happy Customers
+      url: /
+    - title: Jobs
+      url: /
+    - title: Contacts
+      url: /
+
+  partners:
+    - title: Partner Program
+      url: /
+    - title: Affiliate Program
+      url: /
+    - title: Discount Program
+      url: /
+
+  support:
+    - title: Contact Support
+      url: /
+    - title: Help Center
+      url: /
+    - title: Blog
+      url: /
+
+  bottomlinks:
+    - title: Privacy Policy
+      url: /
+    - title: Terms & Conditions
+      url: /
+    - title: Refund Policy
+      url: /

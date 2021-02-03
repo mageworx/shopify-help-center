@@ -41,3 +41,7 @@
   white-space: nowrap;
   width: 1px;
 }
+
+@mixin transition($property) {
+  transition: $property 0.24s cubic-bezier(0.64, 0, 0.35, 1);
+}

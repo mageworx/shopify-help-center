@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   font-size: 1.6rem;
@@ -20,15 +26,14 @@ html {
 }
 
 body {
-  min-height: 100vh;
   margin: 0;
   padding: 0;
   background-color: var(--background-color);
   font-family: Inter, Helvetica, Arial, Lucida Grande, sans-serif;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

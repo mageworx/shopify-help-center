@@ -158,12 +158,14 @@
   &__bottomlinks {
     padding: 0;
     margin: 0;
+    margin-top: rem(-10px);
     margin-bottom: rem(30px);
     list-style: none;
     display: flex;
     flex-wrap: wrap;
 
     &-item {
+      margin-top: rem(10px);
       &:not(:last-child) {
         margin-right: rem(20px);
       }

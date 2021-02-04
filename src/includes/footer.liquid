@@ -1,3 +1,157 @@
 <footer class="footer">
-  footer
+  <div class="footer__wrapper">
+    <div class="footer__row">
+      <div class="footer__column">
+        <div class="footer__logo">
+          {% assign size = "158, 44" | split: ', ' %}
+          {% icon 'mageworx', '', size %}
+        </div>
+        <div class="footer__socials">
+          <div class="footer__socials-heading">Don’t miss a thing</div>
+          <ul class="footer__socials-list">
+            <li class="footer__socials-list-item">
+              <a
+                href="{{ site.footer.socials.facebook }}"
+                class="footer__socials-icon"
+              >
+                {% icon 'facebook-icon' '' 42 %}
+                <span class="visually-hidden">Facebook</span>
+              </a>
+            </li>
+            <li class="footer__socials-list-item">
+              <a href="{{ site.footer.socials.twitter }}" class="footer__socials-icon">
+                {% icon 'twitter-icon' '' 42 %}
+                <span class="visually-hidden">Twitter</span>
+              </a>
+            </li>
+            <li class="footer__socials-list-item">
+              <a
+                href="{{ site.footer.socials.pinterest }}"
+                class="footer__socials-icon"
+              >
+                {% icon 'pinterest-icon' '' 42 %}
+                <span class="visually-hidden">Pinterest</span>
+              </a>
+            </li>
+            <li class="footer__socials-list-item">
+              <a
+                href="{{ site.footer.socials.linkedin }}"
+                class="footer__socials-icon"
+              >
+                {% icon 'linkedin-icon' '' 42 %}
+                <span class="visually-hidden">LinkedIn</span>
+              </a>
+            </li>
+            <li class="footer__socials-list-item">
+              <a href="{{ site.footer.socials.youtube }}" class="footer__socials-icon">
+                {% icon 'youtube-icon' '' 42 %}
+                <span class="visually-hidden">YouTube</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__column">
+        <div class="footer__row">
+          <div class="footer__column">
+            <div class="footer__linklists">
+              {% if site.footer.apps.left %}
+                <div class="footer__linklist">
+                  <div class="footer__linklist-title footer__linklist-title--accent">
+                    Shopify Apps
+                  </div>
+                    <ul class="footer__linklist-list">
+                      {% for app in site.footer.apps.left %}
+                        <li class="footer__linklist-list-item">
+                          <a href="{{ app.url }}" class="footer__linklist-link">{{ app.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                </div>
+              {% endif %}
+              {% if site.footer.apps.right %}
+                <div class="footer__linklist footer__linklist--no-title">
+                    <ul class="footer__linklist-list">
+                      {% for app in site.footer.apps.right %}
+                        <li class="footer__linklist-list-item">
+                          <a href="{{ app.url }}" class="footer__linklist-link">{{ app.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="footer__row">
+          <div class="footer__column">
+            <div class="footer__linklists footer__linklists--bottom">
+              {% if site.footer.company %}
+                <div class="footer__linklist">
+                  <div class="footer__linklist-title">
+                    Company
+                  </div>
+                    <ul class="footer__linklist-list">
+                      {% for item in site.footer.company %}
+                        <li class="footer__linklist-list-item">
+                          <a href="{{ item.url }}" class="footer__linklist-link">{{ item.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                </div>
+              {% endif %}
+              {% if site.footer.partners %}
+                <div class="footer__linklist">
+                  <div class="footer__linklist-title">
+                    Partners
+                  </div>
+                    <ul class="footer__linklist-list">
+                      {% for item in site.footer.partners %}
+                        <li class="footer__linklist-list-item">
+                          <a href="{{ item.url }}" class="footer__linklist-link">{{ item.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                </div>
+              {% endif %}
+              {% if site.footer.support %}
+                <div class="footer__linklist">
+                  <div class="footer__linklist-title">
+                    Support
+                  </div>
+                    <ul class="footer__linklist-list">
+                      {% for item in site.footer.support %}
+                        <li class="footer__linklist-list-item">
+                          <a href="{{ item.url }}" class="footer__linklist-link">{{ item.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__row footer__row--reverse footer__bottomline">
+      <div class="footer__column">
+        <small class="footer__copyright">
+          &copy; 2008–2020 Mageworx.com All Rights Reserved
+        </small>
+      </div>
+      <div class="footer__column">
+        {% if site.footer.bottomlinks %}
+          <ul class="footer__bottomlinks">
+            {% for item in site.footer.bottomlinks %}
+              <li class="footer__bottomlinks-item">
+                <a href="{{ item.url }}" class="footer__bottomlinks-link">
+                  {{ item.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
 </footer>

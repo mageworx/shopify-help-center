@@ -8,6 +8,7 @@ const markdown = require('./utils/markdown');
 const shortcodes = require('./utils/shortcodes');
 const transforms = require('./utils/transforms');
 const NavigationPlugin = require('./utils/navigation');
+const docsCollection = require('./utils/docsCollection');
 
 module.exports = (config) => {
   const manifestPath = path.resolve(__dirname, 'build/assets/manifest.json');
@@ -28,11 +29,14 @@ module.exports = (config) => {
   });
 
   config.addShortcode('icon', shortcodes.icon);
-  config.addPairedShortcode('markdown', shortcodes.markdown);
-  config.addLiquidShortcode('image', shortcodes.image);
-  config.addLiquidShortcode('webpack', shortcodes.webpack);
+  config.addShortcode('markdown', shortcodes.markdown);
+  config.addShortcode('image', shortcodes.image);
+  config.addShortcode('webpack', shortcodes.webpack);
+  config.addShortcode('anchors', shortcodes.anchors);
 
   config.addPassthroughCopy('src/favicon.ico');
+
+  config.addCollection('docs', docsCollection);
 
   config.setBrowserSyncConfig({
     ...config.browserSyncConfig,
@@ -47,9 +51,12 @@ module.exports = (config) => {
         });
       },
     },
-    // Speed/clean up build time
     ui: false,
     ghostMode: false,
+  });
+
+  config.setFrontMatterParsingOptions({
+    excerpt: true,
   });
 
   return {
@@ -57,10 +64,4 @@ module.exports = (config) => {
     templateFormats: ['liquid', 'md', '11ty.js'],
     htmlTemplateEngine: 'liquid',
   };
-};
-
-module.exports.navigation = {
-  find: NavigationPlugin.findNavigationEntries,
-  findBreadcrumbs: NavigationPlugin.findBreadcrumbEntries,
-  getDependencyGraph: NavigationPlugin.getDependencyGraph,
 };

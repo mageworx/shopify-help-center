@@ -4,6 +4,7 @@ const PostCSSPresetEnv = require('postcss-preset-env');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -19,6 +20,7 @@ module.exports = {
     path.resolve(__dirname, 'src/assets/scripts/index.ts'),
     path.resolve(__dirname, 'src/assets/styles/main.scss'),
   ],
+  context: path.resolve(__dirname, 'src'),
   output: {
     filename: isDev ? '[name].js' : '[name].[contenthash].js',
     path: path.resolve(__dirname, 'build/assets'),
@@ -38,7 +40,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts$/i,
+        test: /\.ts?x$/i,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
@@ -51,6 +53,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: { postcssOptions: { plugins: [PostCSSPresetEnv] } },
           },
+          'resolve-url-loader',
           'sass-loader',
         ],
       },
@@ -71,8 +74,7 @@ module.exports = {
     ],
   },
   resolve: {
-    alias: {
-      assets: path.resolve(__dirname, 'src/assets'),
-    },
+    extensions: ['.ts', '.tsx', '.js'],
+    plugins: [new TsconfigPathsPlugin()],
   },
 };

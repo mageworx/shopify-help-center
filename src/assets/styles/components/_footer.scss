@@ -100,6 +100,11 @@
     padding-left: rem(15px);
     padding-right: rem(15px);
 
+    @include screen-md {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
     &--no-title {
       margin-top: rem(40px);
     }

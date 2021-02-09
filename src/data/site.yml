@@ -5,6 +5,22 @@ url: https://github.com/clenemt/eleventy-webpack
 image: https://avatars3.githubusercontent.com/u/447956?s=400&v=4
 description: A barebone Eleventy and Webpack boilerplate 🎈.
 
+# ---------------------- #
+# ------ Main page ----- #
+# ---------------------- #
+
+apps:
+  - title: Multi Currency Auto Switcher
+    icon: currency-switcher
+    url: /apo/index.html
+  - title: Advanced Product Options
+    icon: apo
+    url: /apo/index.html
+
+# ---------------------- #
+# -- Table of contents - #
+# ---------------------- #
+
 tableOfContents:
   apo:
     - title: Getting started

@@ -1,9 +1,11 @@
 .footer {
   background-color: var(--secondary-color);
   padding: rem(80px) 0;
+  margin-top: rem(60px);
 
-  @media screen-sm {
+  @include screen-sm {
     padding: rem(120px) 0;
+    margin-top: rem(100px);
   }
 
   &__row {

@@ -6,6 +6,7 @@ eleventyNavigation:
   key: installation
   title: Installation
   parent: apo
+section: getting-started
 tags: apo
 ---
 
@@ -17,6 +18,8 @@ This represents a significant improvement upon the previous version of the panel
 
 The new Magento 2 Admin Panel not only is appealing to the eye, it’s also incorporated a bunch of other improvements, with the focus on user-friendly layout and intuitive navigation.
 The main menu categories lead to the subcategories that are organized based on its subject of relativity.
+
+## Brainstorm
 
 ![asd](https://images.unsplash.com/photo-1593642531955-b62e17bdaa9c?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)
 

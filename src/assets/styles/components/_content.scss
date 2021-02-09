@@ -1,12 +1,9 @@
 .content {
   flex-grow: 1;
   width: 100%;
-
-  &.page {
-    max-width: 850px;
-    padding-left: rem(15px);
-    padding-right: rem(15px);
-    margin: 0 auto;
-    margin-top: rem(55px);
-  }
+  max-width: 850px;
+  padding-left: rem(15px);
+  padding-right: rem(15px);
+  margin: 0 auto;
+  margin-top: rem(55px);
 }

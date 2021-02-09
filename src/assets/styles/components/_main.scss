@@ -1,0 +1,9 @@
+.main {
+  &__heading {
+    text-align: center;
+  }
+
+  &__subheading {
+    @extend .app__name;
+  }
+}

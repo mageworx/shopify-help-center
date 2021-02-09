@@ -1,4 +1,7 @@
-import Lightense from 'lightense-images';
+import { initializeSearch } from 'components/search';
 
+function init() {
+  initializeSearch();
+}
 
-Lightense('img:not(.no-lightense)')
+init();

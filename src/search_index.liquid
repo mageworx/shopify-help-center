@@ -1,0 +1,17 @@
+---
+permalink: assets/search_index.json
+eleventyExcludeFromCollections: true
+---
+
+[
+  {% for page in collections.docs %}
+  {% assign body = page.templateContent | strip_code | strip_newlines  | strip_headings | json %}
+    {
+      "id": {{ forloop.index }},
+      "url": "{{ page.url }}",
+      "title": "{{ page.data.title }}",
+      "body": {{ body }}
+    }
+    {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

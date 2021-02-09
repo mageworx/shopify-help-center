@@ -1,9 +1,28 @@
-<div class="search" role="search">
-  <label for="search" class="search__label">Search Help Center</label>
-  <input type="text" class="search__input" placeholder="Search" id="search" />
-  <button type="submit" class="search__button" tabindex="0">
-    <span class="visually-hidden">Search</span>
-    {% icon 'search', '', 20 %}
-  </button>
-  <div class="search__backdrop"></div>
+<div class="search" role="search" data-search-wrapper>
+  <div class="search__wrapper">
+    <div class="search__field">
+      <label for="search" class="search__label">Search Help Center</label>
+      <input
+        type="text"
+        class="search__input"
+        placeholder="Search Help Center"
+        data-search-field
+      />
+      <button type="submit" class="search__button" tabindex="0">
+        <span class="visually-hidden">Search</span>
+        {% icon 'search', '', 20 %}
+      </button>
+      <button type="submit" class="search__clear" tabindex="0" data-search-clear>
+        <span class="visually-hidden">Clear</span>
+        {% icon 'close', '', 18 %}
+      </button>
+      <div class="search__backdrop"></div>
+    </div>
+    <div class="search__results search-results">
+      <div class="search-results__scrollwrap">
+        <div class="search-results__output" data-search-results></div>
+      </div>
+    </div>
+  </div>
+  <div class="search__overlay" data-search-overlay></div>
 </div>

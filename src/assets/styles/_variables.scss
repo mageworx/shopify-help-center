@@ -1,11 +1,12 @@
 $color-accent: #74de20;
-$color-accent-hovered: #67CA18;
+$color-accent-hovered: #67ca18;
 $color-secondary: #000000;
 $color-background: #ffffff;
 $color-action: #282828;
-$color-interactive: #fe460c;
-$color-interactive-hovered: #dc3905;
+$color-interactive: #2e72d2;
+$color-interactive-hovered: #184e99;
 $color-subdued: #959595;
+$color-active-link: #f0f0f0;
 $color-border: #d1d1d1;
 $table-head-background: #f5f5f5;
 
@@ -26,6 +27,7 @@ $text-font: 'Inter', Helvetica, Arial, Lucida Grande, sans-serif;
   --accent-hovered: #{$color-accent-hovered};
   --secondary-color: #{$color-secondary};
   --action-color: #{$color-action};
+  --active-link: #{$color-active-link};
   --interactive-color: #{$color-interactive};
   --interactive-hovered: #{$color-interactive-hovered};
   --background-color: #{$color-background};

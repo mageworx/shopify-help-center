@@ -1,0 +1,22 @@
+{% assign key = tags | first %}
+{% assign sections = site.tableOfContents[key] %}
+{% assign docs = collections[key] %}
+
+{% for section in sections %}
+  <div class="toc">
+    <section class="toc__section">
+      <h1 class="toc__section-heading">{{ section.title }}</h1>
+      {% assign articles = docs | section: section.key %}
+
+      <ul class="toc__list">
+        {% for article in articles %}
+          <li class="toc__list-item">
+            <a class="toc__list-link" href="{{ article.url }}">
+              {{ article.data.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+{% endfor %}

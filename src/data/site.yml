@@ -5,6 +5,17 @@ url: https://github.com/clenemt/eleventy-webpack
 image: https://avatars3.githubusercontent.com/u/447956?s=400&v=4
 description: A barebone Eleventy and Webpack boilerplate 🎈.
 
+tableOfContents:
+  apo:
+    - title: Getting started
+      key: getting-started
+    - title: Using the app
+      key: using-the-app
+    - title: Compatibility
+      key: compatibility
+    - title: Subscription & Billing
+      key: subscription-and-billing
+
 # ---------------------- #
 # --- Footer section --- #
 # ---------------------- #

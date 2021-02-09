@@ -8,6 +8,9 @@ module.exports = {
 
   log: (data) => console.log(`\n\n${util.inspect(data)}\n\n`),
   markdown: (content) => markdown.renderInline(content),
+  section: (content, section) => {
+    return content.filter((doc) => doc.data.section === section);
+  },
   strip_headings: (content) => {
     return content.replace(/<h\d[^>]*?>(\r\n|\r|\n|.)*?<\/h\d>/g, '');
   },

@@ -1,0 +1,15 @@
+.support-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: rem(40px) rem(20px);
+  background-color: var(--table-head-background);
+  border-radius: 8px;
+
+  &__heading {
+    text-align: center;
+    font-size: rem(20px);
+    line-height: rem(20px * 1.2);
+    margin-bottom: rem(30px);
+  }
+}

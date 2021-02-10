@@ -1,5 +1,5 @@
 import lunr from 'lunr';
-import { Document, SearchDocument, SearchDocumentMap } from 'types/search';
+import { Document, SearchDocumentMap } from 'types/search';
 import { setupDocumentsMapping } from '../SearchDocument';
 
 class Search {
@@ -29,7 +29,7 @@ class Search {
 
     const groups = this.index.search(`${query}*`);
 
-    return groups.reduce<SearchDocument[]>((results, { ref }) => {
+    return groups.reduce<Document[]>((results, { ref }) => {
       const document = this.documents.get(Number(ref));
 
       if (typeof document !== 'undefined') {

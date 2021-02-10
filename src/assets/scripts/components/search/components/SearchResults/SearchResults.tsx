@@ -1,9 +1,9 @@
 import { render } from 'preact';
-import { SearchDocument } from 'types/search';
+import { Document } from 'types/search';
 import { pluralize } from 'utilities/pluralize';
 
 interface SearchResultsProps {
-  items: SearchDocument[];
+  items: Document[];
   query: string;
 }
 
@@ -20,16 +20,17 @@ function SearchResults({ items, query }: SearchResultsProps) {
 
   const listMarkup = (
     <ol class="search-results__list">
-      {items.map(({ url, title, body }) => {
+      {items.map(({ id, url, title, parent, excerpt }) => {
         return (
-          <li class="search-results__list-item search-results__result">
+          <li class="search-results__list-item search-results__result" key={id}>
             <a href={url} class="search-results__result-link" tabIndex={-1}>
               <article class="search-results__result-article">
+                <small class="search-results__parent">{parent}</small>
                 <h1 class="search-results__result-title">
                   {highlight(title, query)}
                 </h1>
                 <p class="search-results__result-teaser">
-                  {highlight(body, query)}
+                  {highlight(excerpt, query)}
                 </p>
               </article>
             </a>
@@ -58,7 +59,7 @@ function highlight(content: string, query: string) {
 }
 
 export function renderSearchResults(
-  results: SearchDocument[],
+  results: Document[],
   query: string,
   container: HTMLElement
 ) {

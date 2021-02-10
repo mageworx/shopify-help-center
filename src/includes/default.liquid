@@ -4,11 +4,12 @@
     <meta charset="utf-8" />
     <title>
       {% if title %}
-      {{ title }} · {{ site.title }} {% else %}{{ site.title or site.name }}
+      {{ title }} — {{ site.title }} {% else %} {{ site.title }}
       {% endif %}
     </title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="{{ description or site.description }}" />
+    <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
     <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico">
@@ -17,17 +18,21 @@
     <link type="image/png" sizes="96x96" rel="icon" href="{% image 'favicon-96x96.png' %}">
     <link type="image/png" sizes="120x120" rel="icon" href="{% image 'favicon-120x120.png' %}">
     <link type="image/png" sizes="192x192" rel="icon" href="{% image 'android-icon-192x192.png' %}">
+
+    <meta property="og:locale" content="en" />
     <meta
       property="og:title"
-      content="{{ title or site.title or site.name }}"
+      content="{% if title %}
+      {{ title }} — {{ site.title }} {% else %} {{ site.title }}
+      {% endif %}"
     />
-    <meta property="og:type" content="{{ type or site.type }}" />
-    <meta property="og:url" content="{{ url or site.url }}" />
-    <meta property="og:image" content="{{ image or site.image }}" />
-    <meta property="og:site_name" content="{{ name or site.name }}" />
+    <meta property="og:type" content="{{ site.type }}" />
+    <meta property="og:url" content="{{ site.url | append: permalink }}" />
+    <meta property="og:image" content="{% image 'share-image.png' %}" />
+    <meta property="og:site_name" content="{{ site.name }}" />
     <meta
       property="og:description"
-      content="{{ description or site.description }}"
+      content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}"
     />
 
     <link rel="stylesheet" href="{% webpack 'main.css' %}" />

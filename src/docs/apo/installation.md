@@ -12,7 +12,7 @@ tags: apo
 
 # Customize your app
 
-## When you log in as an Admin, the first thing that catches the eyes is a slick and well-designed new User Interface. The new design is responsive and touch-friendly.
+## When you log in as an Admin, the first thing that catches the eyes is a slick and well-designed new User Interface
 
 This represents a significant improvement upon the previous version of the panel that looked, frankly speaking, quite out-of-date.
 
@@ -63,19 +63,4 @@ Here's our logo (hover to see the title text):
       2. Ut sit amet placerat ante
       3. Suspendisse ac eros arcu
 
-Colons can be used to align columns.
-
-| Tables        |      Are      |  Cool |
-| ------------- | :-----------: | ----: |
-| `col 3 is`      | right-aligned | $1600 |
-| col 2 is      |   centered    |   $12 |
-| zebra stripes |   are neat    |    $1 |
-
-There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the
-raw Markdown line up prettily. You can also use inline Markdown.
-
-| Markdown | Less      | Pretty     | Markdown | Less      | Pretty     | Markdown | Less      | Pretty     | Markdown | Less      | Pretty     |
-| -------- | --------- | ---------- | -------- | --------- | ---------- | -------- | --------- | ---------- | -------- | --------- | ---------- |
-| _Still_  | `renders` | **nicely** | _Still_  | `renders` | **nicely** | _Still_  | `renders` | **nicely** | _Still_  | `renders` | **nicely** |
-| 1        | 2         | 3          | 1        | 2         | 3          | 1        | 2         | 3          | 1        | 2         | 3          |
+@[youtube](https://youtu.be/JGf8ErR7dWg)

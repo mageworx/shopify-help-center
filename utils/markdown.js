@@ -16,24 +16,14 @@ const markdown = markdownIt({
   .use(markdownItAnchor)
   .use(markdownItHighlight)
   .use(markdownItVideo, {
-    youtube: { width: 820, height: 461 }
+    youtube: { width: 820, height: 461 },
   });
 
-markdown.renderer.rules.table_open = function (
-  tokens,
-  idx,
-  options,
-  self
-) {
+markdown.renderer.rules.table_open = function (tokens, idx, options, self) {
   return `<div class='table-wrapper'>` + self.renderToken(tokens, idx, options);
 };
 
-markdown.renderer.rules.table_close = function (
-  tokens,
-  idx,
-  options,
-  self
-) {
+markdown.renderer.rules.table_close = function (tokens, idx, options, self) {
   return self.renderToken(tokens, idx, options) + `</div>`;
 };
 

@@ -1,9 +1,8 @@
-name: eleventy-webpack
-title: eleventy-webpack
+name: Mageworx Help Center
+title: Mageworx Help Center
 type: website
-url: https://github.com/clenemt/eleventy-webpack
-image: https://avatars3.githubusercontent.com/u/447956?s=400&v=4
-description: A barebone Eleventy and Webpack boilerplate 🎈.
+url: https://mageworx.com/help/shopify/
+description: Mageworx Help Center for Shopify apps.
 
 # ---------------------- #
 # ------ Main page ----- #

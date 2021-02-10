@@ -1,3 +1,6 @@
+---
+date: Last Modified
+---
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,7 +30,7 @@
       {% endif %}"
     />
     <meta property="og:type" content="{{ site.type }}" />
-    <meta property="og:url" content="{{ site.url | append: permalink }}" />
+    <meta property="og:url" content="{{ site.url }}/{{ permalink }}" />
     <meta property="og:image" content="{% image 'share-image.png' %}" />
     <meta property="og:site_name" content="{{ site.name }}" />
     <meta

@@ -13,7 +13,6 @@ function SearchResults({ items, query }: SearchResultsProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [itemsToShow, setItemsToShow] = useState(3);
   const visibleItems = items.slice(0, itemsToShow);
-  console.log(itemsToShow, visibleItems);
 
   const onScrolledToBottom = useCallback(() => {
     const nextVisibleIndex = itemsToShow + 3;

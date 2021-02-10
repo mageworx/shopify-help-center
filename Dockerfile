@@ -16,13 +16,12 @@ EXPOSE 8080
 
 FROM node:15.5.0 as builder
 
-RUN mkdir -p /workspace \
+RUN mkdir -p /workspace/node_modules \
     && chown node:node -R /workspace
 
-WORKDIR workspace
+COPY --chown=node:node package.json yarn.lock /workspace/
 
-COPY --chown=node:node package.json yarn.lock ./
-COPY --chown=node:node . ./
+WORKDIR /workspace
 
 USER node
 
@@ -30,7 +29,7 @@ COPY --from=dev --chown=node:node /workspace/node_modules /workspace/node_module
 
 COPY --chown=node:node . /workspace
 
-RUN yarn build
+RUN YARN_CACHE_FOLDER=/workspace/.yarn-cache yarn build
 
 FROM nginx:1.17.10-alpine as prod
 

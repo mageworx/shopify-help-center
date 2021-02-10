@@ -1,6 +1,6 @@
 ---
 layout: app
-permalink: 'apo/index.html'
+permalink: apo/index.html
 title: Advanced Product Options
 appTitle: Advanced Product Options
 eleventyNavigation:

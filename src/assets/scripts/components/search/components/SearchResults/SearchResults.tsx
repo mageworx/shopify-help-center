@@ -1,6 +1,8 @@
 import { render } from 'preact';
+import { useCallback, useEffect, useRef, useState } from 'preact/hooks';
 import { Document } from 'types/search';
 import { pluralize } from 'utilities/pluralize';
+import { throttle } from 'throttle-debounce';
 
 interface SearchResultsProps {
   items: Document[];
@@ -8,6 +10,39 @@ interface SearchResultsProps {
 }
 
 function SearchResults({ items, query }: SearchResultsProps) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [itemsToShow, setItemsToShow] = useState(3);
+  const visibleItems = items.slice(0, itemsToShow);
+  console.log(itemsToShow, visibleItems);
+
+  const onScrolledToBottom = useCallback(() => {
+    const nextVisibleIndex = itemsToShow + 3;
+
+    setItemsToShow(nextVisibleIndex);
+  }, [itemsToShow, items.length]);
+
+  useEffect(() => {
+    if (!scrollRef.current) {
+      return;
+    }
+
+    const offsetHeight = scrollRef.current.offsetHeight;
+    const scrollHeight = scrollRef.current.scrollHeight;
+    const handleScroll = throttle(300, function (e) {
+      const scrollTop = (e.target as HTMLDivElement).scrollTop;
+
+      if (offsetHeight + scrollTop === scrollHeight) {
+        onScrolledToBottom();
+      }
+    });
+
+    scrollRef.current!.addEventListener('scroll', handleScroll);
+
+    return () => {
+      scrollRef.current!.removeEventListener('scroll', handleScroll);
+    };
+  }, [onScrolledToBottom, scrollRef.current]);
+
   const metaContent =
     query.length === 0
       ? 'Type to start searching'
@@ -20,7 +55,7 @@ function SearchResults({ items, query }: SearchResultsProps) {
 
   const listMarkup = (
     <ol class="search-results__list">
-      {items.map(({ id, url, title, parent, excerpt }) => {
+      {visibleItems.map(({ id, url, title, parent, excerpt }) => {
         return (
           <li class="search-results__list-item search-results__result" key={id}>
             <a href={url} class="search-results__result-link" tabIndex={-1}>
@@ -41,10 +76,12 @@ function SearchResults({ items, query }: SearchResultsProps) {
   );
 
   return (
-    <>
-      {metaMarkup}
-      {listMarkup}
-    </>
+    <div class="search-results__scrollwrap" ref={scrollRef}>
+      <div class="search-results__output">
+        {metaMarkup}
+        {listMarkup}
+      </div>
+    </div>
   );
 }
 

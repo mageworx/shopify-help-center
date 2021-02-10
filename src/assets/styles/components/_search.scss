@@ -163,6 +163,10 @@
       padding: 0;
       margin: 0;
       list-style: none;
+
+      &-item {
+        overflow-x: hidden;
+      }
     }
 
     &__meta {

@@ -38,19 +38,11 @@ module.exports = {
     </svg>`;
   },
   image: async (...args) => {
-    let fallbackWidth, fallbackHeight;
-
     if (Array.isArray(args[0])) {
       [fallbackWidth, fallbackHeight] = args.shift();
     }
 
     const src = args[0];
-    const alt = args[1];
-    const title = args[2];
-    const className = args[3];
-    const lazy = args[4] ?? true;
-    const sizes = args[5] ?? defaultSizes;
-
     const extension = path.extname(src).slice(1).toLowerCase();
     const fullSrc = isFullUrl(src) ? src : `./src/assets/images/${src}`;
 
@@ -58,7 +50,7 @@ module.exports = {
     try {
       stats = await Image(fullSrc, {
         widths: defaultImagesSizes,
-        formats: extension === 'webp' ? ['webp', 'jpeg'] : ['webp', extension],
+        formats: extension,
         urlPath: '/assets/images/',
         outputDir: 'build/assets/images/',
       });
@@ -69,30 +61,6 @@ module.exports = {
       return '';
     }
 
-    const fallback = stats[extension].reverse()[0];
-    const picture = outdent({ newline: '' })`
-    <picture>
-      ${Object.values(stats)
-        .map(
-          (image) =>
-            `<source type="image/${image[0].format}" srcset="${image
-              .map((entry) => `${entry.url} ${entry.width}w`)
-              .join(', ')}" sizes="${sizes}">`
-        )
-        .join('')}
-      <img
-        class="${className ? `img-${className}` : ''}"
-        loading="${lazy ? 'lazy' : 'eager'}"
-        src="${fallback.url}"
-        width="${fallbackWidth ?? fallback.width}"
-        height="${fallbackHeight ?? fallback.height}" alt="${alt}">
-    </picture>`;
-    return title
-      ? outdent({ newline: '' })`
-      <figure class="${className ? `fig-${className}` : ''}">
-        ${picture}
-        <figcaption>${markdown.renderInline(title)}</figcaption>
-      </figure>`
-      : picture;
+    return '/assets/images/' + stats['png'][0].filename;
   },
 };

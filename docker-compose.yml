@@ -4,6 +4,8 @@ services:
   app:
     build:
       context: .
+      target: ${TARGET:-dev}
+    image: 576790146472.dkr.ecr.eu-west-1.amazonaws.com/mws_helpcenter:${TARGET:-dev}_${APP_ENV:-dev}
     command: tail -f /dev/null
     volumes:
       - ./:/workspace:cached

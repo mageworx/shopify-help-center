@@ -8,3 +8,9 @@ start:
 	docker-compose up -d
 
 up: start serve
+
+staging-build:
+	TARGET=prod APP_ENV=staging URL_PREFIX=staging- docker-compose build
+
+staging-push: staging-build
+	AWS_PROFILE=mageworx TARGET=prod APP_ENV=staging URL_PREFIX=staging- docker-compose push

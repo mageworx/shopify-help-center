@@ -1,0 +1,22 @@
+version: '2.4'
+
+services:
+  app:
+    image: 576790146472.dkr.ecr.eu-west-1.amazonaws.com/mws_helpcenter:prod_${APP_ENV}
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: ${AWS_LOG_REGION}
+        awslogs-group: ${APP_ENV}-mws-helpcenter
+    restart: unless-stopped
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.mws_helpcenter_${APP_ENV}.rule=Host(`${URI_PREFIX}shopify-helpcenter.mageworx.com`)'
+      - 'traefik.http.routers.mws_helpcenter_${APP_ENV}.entrypoints=webtls'
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    external: true
+    name: mws_shopify_apps_traefik_default

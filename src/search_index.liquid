@@ -2,28 +2,29 @@
 permalink: assets/search_index.json
 eleventyExcludeFromCollections: true
 ---
+{%- assign id = 0 -%}
+{%- capture objects -%}
+  {%- for page in collections.docs -%}
+    {%- assign doc_parts = page.templateContent | strip_code | strip_page_headings | split_content: page.url, page.data.title -%}
+    {%- assign pageLoop = forloop -%}
 
-{% assign id = 0 %}
-[
-{% for page in collections.docs %}
-  {% assign doc_parts = page.templateContent | strip_code | strip_page_headings | split_content: page.url %}
+    {%- for part in doc_parts -%}
+      {%- assign id = id | plus: 1 -%}
+      {%- assign body = part.content | strip_html | strip_newlines | strip_extra_whitespaces -%}
 
-  {% for part in doc_parts %}
-    {% assign id = id | plus: 1 %}
-    {% assign body = part.content | strip_html | strip_newlines | strip_extra_whitespaces %}
       {
-        "id": {{ id }},
+        "id":{{ id }},
         "url": "{{ part.url }}",
         "title": "{{ part.title }}",
         "parent": "{{ page.data.title }}",
         "body": "{{ body }}",
         "excerpt": "{{ body | truncate: 300 }}"
       }
-    {% unless forloop.last %},
-    {% endunless %}
-  {% endfor %}
-  {% unless forloop.last %}
-    {% unless forloop.first %},
-    {% endunless %}
-  {% endunless %}
-{% endfor %}]
+      {%- unless forloop.last and pageLoop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign len = objects | size | minus: 1 -%}
+[
+  {{ objects | slice: 0, len }}
+]

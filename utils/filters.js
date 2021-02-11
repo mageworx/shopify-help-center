@@ -14,7 +14,7 @@ module.exports = {
   strip_page_headings: (content) => {
     return content.replace(/<h1[^>]*?>.*?<\/h1>/gi, '');
   },
-  split_content: (content, pageUrl) => {
+  split_content: (content, pageUrl, pageTitle) => {
     const regex = new RegExp(/(<h\d[^>]*?>.*?<\/h\d>)/gi);
     const parts = content
       .split(regex)
@@ -26,7 +26,7 @@ module.exports = {
     parts.forEach((part, index) => {
       const matchTitle = part.match(/(?<=<h[^>]*?>).*?(?=<\/h\d>)/gi);
 
-      result[index] = { title: '', content: '', url: pageUrl };
+      result[index] = { title: pageTitle, content: '', url: pageUrl };
 
       if (matchTitle) {
         result[index].title = matchTitle[0];

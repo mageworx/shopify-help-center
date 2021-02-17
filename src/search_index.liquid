@@ -10,7 +10,7 @@ eleventyExcludeFromCollections: true
 
     {%- for part in doc_parts -%}
       {%- assign id = id | plus: 1 -%}
-      {%- assign body = part.content | strip_html | strip_newlines | strip_extra_whitespaces -%}
+      {%- assign body = part.content | strip_html | replace_newlines | strip_extra_whitespaces | escape -%}
 
       {
         "id":{{ id }},

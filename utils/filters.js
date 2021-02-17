@@ -47,4 +47,7 @@ module.exports = {
   strip_extra_whitespaces: (content) => {
     return content.replace(/\s{2,}/g, ' ');
   },
+  replace_newlines: (content) => {
+    return content.replace(/(\r\n|\n|\r)/gim, ' ');
+  }
 };

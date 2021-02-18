@@ -51,11 +51,11 @@ ol {
 
 a,
 a:link {
-  color: var(--accent-color);
+  color: var(--interactive-color);
   text-decoration: underline;
 
   &:hover {
-    color: var(--accent-hovered);
+    color: var(--interactive-hovered);
     text-decoration: none;
   }
 }

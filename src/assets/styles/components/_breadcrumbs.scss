@@ -24,13 +24,23 @@
         color: var(--subdued-color);
         font-weight: var(--font-weight-bold);
       }
+
+      #{$this}__link {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 
   &__link,
   &__link:link {
     color: var(--subdued-color);
-    text-decoration: none;
     font-weight: var(--font-weight-bold);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--subdued-color);
+    }
   }
 }

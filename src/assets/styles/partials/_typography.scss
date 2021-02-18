@@ -1,6 +1,6 @@
 $scale-factor: 1.73;
 $base-font-size: 16px;
-$line-height-ratio: 1.2;
+$line-height-ratio: 1.5;
 
 @mixin typography($ratio: 1, $scale: $scale-factor, $media-scale: 1) {
   $font-size: $base-font-size * $scale * $ratio;

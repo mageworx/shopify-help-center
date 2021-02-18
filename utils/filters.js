@@ -9,7 +9,21 @@ module.exports = {
   log: (data) => console.log(`\n\n${util.inspect(data)}\n\n`),
   markdown: (content) => markdown.renderInline(content),
   section: (content, section) => {
-    return content.filter((doc) => doc.data.section === section);
+    return content.filter((doc) => doc.data.section === section).sort((a, b) => {
+      if (!a.data.sortOrder || !b.data.sortOrder) {
+        return 0;
+      }
+
+      if (a.data.sortOrder < b.data.sortOrder) {
+        return -1;
+      }
+
+      if (a.data.sortOrder > b.data.sortOrder) {
+        return 1;
+      }
+
+      return 0;
+    });
   },
   strip_page_headings: (content) => {
     return content.replace(/<h1[^>]*?>.*?<\/h1>/gi, '');

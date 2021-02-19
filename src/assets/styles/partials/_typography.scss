@@ -52,10 +52,9 @@ ol {
 a,
 a:link {
   color: var(--interactive-color);
-  text-decoration: underline;
+  text-decoration: none;
 
   &:hover {
     color: var(--interactive-hovered);
-    text-decoration: none;
   }
 }

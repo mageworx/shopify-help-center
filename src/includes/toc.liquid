@@ -5,7 +5,14 @@
 {% for section in sections %}
   <div class="toc">
     <section class="toc__section">
-      <h1 class="toc__section-heading">{{ section.title }}</h1>
+      <div class="toc__section-header">
+        {% if section.icon %}
+          <span class="toc__section-icon">
+            {% icon section.icon, '', 48 %}
+          </span>
+        {% endif %}
+        <h1 class="toc__section-heading">{{ section.title }}</h1>
+      </div>
       {% assign articles = docs | section: section.key %}
 
       <ul class="toc__list">

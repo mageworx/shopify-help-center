@@ -15,6 +15,9 @@ apps:
   - title: Advanced Product Options
     icon: apo
     url: /apo/index.html
+  - title: Upsells & Cross-sells
+    icon: cross-sell
+    url: /upsells/index.html
 
 # ---------------------- #
 # -- Table of contents - #
@@ -22,6 +25,15 @@ apps:
 
 tableOfContents:
   apo:
+    - title: Getting started
+      key: getting-started
+    - title: Using the app
+      key: using-the-app
+    - title: Compatibility
+      key: compatibility
+    - title: Subscription & Billing
+      key: subscription-and-billing
+  upsells:
     - title: Getting started
       key: getting-started
     - title: Using the app

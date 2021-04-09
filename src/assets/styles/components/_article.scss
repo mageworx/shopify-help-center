@@ -1,18 +1,10 @@
 .article {
   h2 {
-    margin-bottom: rem(40px * 0.8);
-
-    @include screen-sm {
-      margin-bottom: rem(40px);
-    }
+    margin-bottom: rem(16px);
   }
 
   img {
-    margin: rem(40px * 0.8) 0;
-
-    @include screen-sm {
-      margin: rem(40px) 0;
-    }
+    margin-bottom: rem(16px);
   }
 
   img {
@@ -22,30 +14,18 @@
   }
 
   p {
-    margin: rem(20px * 0.8) 0;
-
-    @include screen-sm {
-      margin: rem(20px) 0;
-    }
+    margin-bottom: rem(8px);
   }
 
   code {
     font-size: em(10px);
-    margin: rem(20px * 0.8) 0;
-
-    @include screen-sm {
-      margin: rem(20px) 0;
-    }
+    margin: rem(16px) 0;
   }
 
   ul:not(.breadcrumbs__list),
   ol {
     padding-left: rem(40px);
-    margin: rem(20px * 0.8) 0;
-
-    @include screen-sm {
-      margin: rem(20px) 0;
-    }
+    margin-bottom: rem(8px);
   }
 
   .table-wrapper {

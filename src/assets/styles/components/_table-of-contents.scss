@@ -31,6 +31,10 @@
     grid-template-columns: 100%;
     grid-gap: rem(15px);
 
+    &-item {
+      margin-bottom: 0;
+    }
+
     @include screen-sm {
       grid-template-columns: repeat(2, 50%);
     }

@@ -1,5 +1,5 @@
 .breadcrumbs {
-  margin-bottom: rem(45px);
+  margin-bottom: rem(44px);
 
   $this: &;
 
@@ -15,6 +15,7 @@
   &__item {
     display: flex;
     margin-top: rem(10px);
+    margin-bottom: 0;
 
     &:not(:last-child) {
       &::after {

@@ -27,7 +27,7 @@ function SearchResults({ items, query }: SearchResultsProps) {
 
     const offsetHeight = scrollRef.current.offsetHeight;
     const scrollHeight = scrollRef.current.scrollHeight;
-    const handleScroll = throttle(300, function (e) {
+    const handleScroll = throttle(300, function (e: Event) {
       const scrollTop = (e.target as HTMLDivElement).scrollTop;
 
       if (offsetHeight + scrollTop === scrollHeight) {

@@ -5,6 +5,13 @@ eleventyExcludeFromCollections: true
 {%- assign id = 0 -%}
 {%- capture objects -%}
   {%- for page in collections.docs -%}
+    {%- assign nav = collections.all | eleventyNavigationBreadcrumb: page.data.eleventyNavigation.key -%}
+    {%- capture parentTitle -%}
+      {%- for entry in nav -%}
+        {%- if forloop.first -%} {%- continue -%} {%- endif -%}
+        {{ entry.title }}{% unless forloop.last %} / {% endunless %}
+      {%- endfor -%}
+    {%- endcapture -%}
     {%- assign doc_parts = page.templateContent | strip_code | strip_page_headings | split_content: page.url, page.data.title -%}
     {%- assign pageLoop = forloop -%}
 
@@ -15,8 +22,8 @@ eleventyExcludeFromCollections: true
       {
         "id":{{ id }},
         "url": "{{ part.url }}",
-        "title": "{{ part.title }}",
-        "parent": "{{ page.data.title }}",
+        "title": "{{ part.title | strip_html }}",
+        "parent": "{{ parentTitle | strip_html }}",
         "body": "{{ body }}",
         "excerpt": "{{ body | truncate: 300 }}"
       }
@@ -24,7 +31,6 @@ eleventyExcludeFromCollections: true
     {%- endfor -%}
   {%- endfor -%}
 {%- endcapture -%}
-{%- assign len = objects | size | minus: 1 -%}
 [
-  {{ objects | slice: 0, len }}
+  {{ objects }}
 ]

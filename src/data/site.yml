@@ -9,15 +9,9 @@ description: Mageworx Help Center for Shopify apps.
 # ---------------------- #
 
 apps:
-  - title: Multi Currency Auto Switcher
-    icon: currency-switcher
-    url: /apo/index.html
   - title: Advanced Product Options
     icon: apo
     url: /apo/index.html
-  - title: Upsells & Cross-sells
-    icon: cross-sell
-    url: /upsells/index.html
 
 # ---------------------- #
 # -- Table of contents - #
@@ -57,56 +51,52 @@ footer:
   apps:
     left:
       - title: Advanced Product Options
-        url: /
+        url: https://apps.shopify.com/advanced-product-options
       - title: Free Shipping & Promo Bars
-        url: /
+        url: https://apps.shopify.com/customer-motivator
       - title: Advanced Bundle Products
-        url: /
+        url: https://apps.shopify.com/grouped-products
       - title: Order & Product Fees
-        url: /
+        url: https://apps.shopify.com/product-fees
       - title: Multi Currency Auto Switcher
-        url: /
+        url: https://apps.shopify.com/currency-auto-switcher
 
     right:
       - title: SavvyCube Analytics & Reports
-        url: /
+        url: https://apps.shopify.com/savvycube-analytics-reports
       - title: No-Contact Delivery
-        url: /
+        url: https://apps.shopify.com/no-contact-delivery
       - title: Quick Holiday Effects
-        url: /
+        url: https://apps.shopify.com/holiday-decorations-effects-icons
       - title: Volume & Tiered Discounts Kit
-        url: /
+        url: https://apps.shopify.com/bulk-discounts-tiered-prices
 
   company:
     - title: About Us
-      url: /
+      url: https://mageworx.com/about-us
     - title: Happy Customers
-      url: /
+      url: https://mageworx.com/happy-customers
     - title: Jobs
-      url: /
+      url: https://mageworx.com/careers
     - title: Contacts
-      url: /
+      url: https://mageworx.com/support
 
   partners:
     - title: Partner Program
-      url: /
+      url: https://mageworx.com/partner-program
     - title: Affiliate Program
-      url: /
+      url: https://mageworx.com/affiliate-program
     - title: Discount Program
-      url: /
+      url: https://mageworx.com/customer-loyalty-program
 
   support:
     - title: Contact Support
-      url: /
-    - title: Help Center
-      url: /
+      url: https://mageworx.com/support
     - title: Blog
-      url: /
+      url: https://appstore.mageworx.com/blog/
 
   bottomlinks:
     - title: Privacy Policy
-      url: /
+      url: https://appstore.mageworx.com/privacy-policy.html
     - title: Terms & Conditions
-      url: /
-    - title: Refund Policy
-      url: /
+      url: https://appstore.mageworx.com/terms-of-use.html

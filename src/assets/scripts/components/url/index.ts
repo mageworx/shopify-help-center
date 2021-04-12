@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
 
 export function initializeEmbedded() {
-  fromEvent(document, 'DOMContentLoaded').subscribe(() => {
+  fromEvent(window, 'load').subscribe(() => {
     const params = new URLSearchParams(window.location.search);
     const header = document.querySelector('.header');
     const footer = document.querySelector('.footer');

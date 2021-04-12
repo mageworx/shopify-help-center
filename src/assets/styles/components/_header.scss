@@ -5,7 +5,7 @@
   background-color: var(--secondary-color);
 
   &--hidden {
-    @extend .visually-hidden;
+    display: none;
   }
 
   &__wrapper {

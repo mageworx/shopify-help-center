@@ -10,8 +10,18 @@ services:
     volumes:
       - ./:/workspace:cached
       - node_modules:/workspace/node_modules
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=mws_dev_proxy"
+      - "traefik.http.routers.help_center_route.rule=Host(`help-center.mws.test`)"
+    networks:
+      - mws_dev_proxy
     ports:
       - 8080:8080
+
+networks:
+  mws_dev_proxy:
+    external: true
 
 volumes:
   node_modules:

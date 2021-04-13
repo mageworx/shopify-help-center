@@ -1,10 +1,9 @@
 export function initializeEmbedded() {
+  const className = 'embedded-hidden';
   const isEmbedded = window.top !== window.self;
-  const header = document.querySelector('.header');
-  const footer = document.querySelector('.footer');
+  const hiddenElements = document.querySelectorAll('.' + className);
 
-  if (!isEmbedded && header && footer) {
-    header.classList.remove('header--hidden');
-    footer.classList.remove('footer--hidden');
+  if (!isEmbedded) {
+    hiddenElements.forEach((el) => el.classList.remove(className));
   }
 }

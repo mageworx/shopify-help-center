@@ -4,7 +4,14 @@ layout: default
 
 <section class="app">
   <h1 class="app__heading">Mageworx Help Center</h1>
-  <h2 class="app__name">{{ appTitle }}</h2>
+  <h2 class="app__name">
+    {% if appIcon %}
+      <span class="app__icon">
+        {% icon appIcon, 32, 32 %}
+      </span>
+    {% endif %}
+    <span>{{ appTitle }}</span>
+  </h2>
 
   {% include search %}
   {% include breadcrumbs %}

@@ -21,12 +21,16 @@ tableOfContents:
   apo:
     - title: Getting started
       key: getting-started
+      icon: installation
     - title: Using the app
       key: using-the-app
+      icon: guide
     - title: Compatibility
       key: compatibility
+      icon: compatibility
     - title: Subscription & Billing
       key: subscription-and-billing
+      icon: billing
   upsells:
     - title: Getting started
       key: getting-started

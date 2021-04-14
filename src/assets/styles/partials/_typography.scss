@@ -16,7 +16,7 @@ h1 {
   font-family: var(--heading-font-family);
   font-size: rem(32px);
   line-height: rem(48px);
-  margin-bottom: rem(5px);
+  margin-bottom: rem(20px);
 
   @include screen-sm {
     font-size: rem(48px);

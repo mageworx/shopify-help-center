@@ -29,7 +29,7 @@
     margin: 0;
     display: grid;
     grid-template-columns: 100%;
-    grid-gap: rem(15px);
+    grid-gap: rem(5px) rem(15px);
 
     &-item {
       margin-bottom: 0;

@@ -5,11 +5,13 @@
 
   &__name {
     margin-bottom: rem(30px);
+    margin-top: rem(15px);
     display: flex;
     justify-content: center;
     align-items: center;
 
     @include screen-sm {
+      margin-top: rem(20px);
       margin-bottom: rem(60px);
     }
   }

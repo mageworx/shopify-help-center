@@ -5,5 +5,10 @@
 
   &__subheading {
     @extend .app__name;
+    margin-top: rem(15px);
+
+    @include screen-sm {
+      margin-top: rem(20px);
+    }
   }
 }

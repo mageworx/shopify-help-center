@@ -11,7 +11,7 @@ services:
     restart: unless-stopped
     labels:
       - 'traefik.enable=true'
-      - 'traefik.http.routers.mws_helpcenter_${APP_ENV}.rule=Host(`${URI_PREFIX}shopify-helpcenter.mageworx.com`)'
+      - 'traefik.http.routers.mws_helpcenter_${APP_ENV}.rule=Host(`${URI_PREFIX}helpcenter.mageworx.com`)'
       - 'traefik.http.routers.mws_helpcenter_${APP_ENV}.entrypoints=webtls'
     networks:
       - traefik

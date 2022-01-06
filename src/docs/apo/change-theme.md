@@ -13,4 +13,18 @@ sortOrder: 6
 
 # Will the app still work if I change the theme?
 
-During installation, our app inserts certain code into the liquid files of the current theme. If you switch the theme, that code would need to be manually reinstalled. If you need help with this, feel free to contact us. 
+If you changed the theme, you need to activate the app on the new theme to make it function there.
+
+1. To activate the app, navigate to the **Settings** section in the left-side menu.
+
+![Settings section]({% image 'apo/5.png', 1920 %})
+
+2. In the **Themes** section, select a theme you’d like to activate the app for and click the **Activate** button next to it. You’ll be redirected to the theme editor with the app embed block toggle enabled by default.
+
+![Activate bvutton]({% image 'apo/2.png', 1920 %})
+
+3. Click **Save** at the upper right corner to make the changes take effect.
+
+![Save button]({% image 'apo/3.png', 1920 %})
+
+Also, you might need to add the new theme’s selectors to the **CSS selectors** section of the app [Settings](configure-settings.html).

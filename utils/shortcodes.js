@@ -38,10 +38,8 @@ module.exports = {
     </svg>`;
   },
   image: async (...args) => {
-    if (Array.isArray(args[0])) {
-      [fallbackWidth, fallbackHeight] = args.shift();
-    }
 
+    const widths = args[1] ? [args[1]] : defaultImagesSizes;
     const src = args[0];
     const extension = path.extname(src).slice(1).toLowerCase();
     const fullSrc = isFullUrl(src) ? src : `./src/assets/images/${src}`;
@@ -49,7 +47,7 @@ module.exports = {
     let stats;
     try {
       stats = await Image(fullSrc, {
-        widths: defaultImagesSizes,
+        widths,
         formats: extension,
         urlPath: '/assets/images/',
         outputDir: 'build/assets/images/',
